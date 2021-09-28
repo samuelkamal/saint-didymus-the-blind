@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    {% for sub in sub %}
+    <div class="col mb-5">
+        <a href="{% url 'sub' sub.Slug %}">
+            <div class="card" style="width: 18rem;">
+                <img style="border-radius: 20px; height: 200px;" class="card-img-top" src="{{sub.Pic.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h3 style="text-align: center; color: black;" class="card-title">{{sub.Title}}</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

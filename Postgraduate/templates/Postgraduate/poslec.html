@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col mb-5 mt-3">
+        <h1 style="color: black;">{{lec.Title}}</h1><hr>
+        <iframe width="600" height="400" style="border: none;" src="{{lec.Video}}"></iframe>
+        <p style="font-size: larger;">{{lec.More_Info}}</p><hr>
+        {% if lec.Lecture_Files or lec.Audio_Lecture %}
+        <h4 class="mb-3">اضافات :-</h4>
+        {% if lec.Lecture_Files %}
+        <a href="{{lec.Lecture_Files}}" target="_blank"><div style="background-color: black; color: white;" class="btn ml-5">لتحميل ملفات المحاضرة</div></a>
+        {% endif %}
+        {% if lec.Audio_Lecture %}
+        <a href="{{lec.Audio_Lecture}}" target="_blank"><div style="background-color: black; color: white;" class="btn">لتحميل المحاضرة صوتيًا</div></a><hr>
+        {% endif %}
+        {% endif %}
+        {% if lec.Sheet %}
+        <h4 class="mb-3">Sheet :-</h4>
+        <a href="{{lec.Sheet}}" target="_blank"><div style="background-color: black; color: white;" class="btn ml-5">لتحميل Sheet المحاضرة</div></a>
+        <a href="https://forms.gle/XTqBarDDE5kGwSBt9" target="_blank"><div style="background-color: black; color: white;" class="btn ml-5">لارسال الSheet الخاص بالمحاضرة</div></a><hr>
+        {% endif %}
+        {% if lec.Test %}
+        <h4 class="mb-3">اختبار على المحاضرة :-</h4>
+        <a href="{{lec.Test}}" target="_blank"><div style="background-color: black; color: white;" class="btn ml-5">الاختبار</div></a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

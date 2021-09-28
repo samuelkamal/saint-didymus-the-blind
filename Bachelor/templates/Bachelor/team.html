@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    {% for term in term %}
+    <div class="col mb-5 mt-3">
+        <a style="font-size: x-large; font-weight: bold;" href="{% url 'term' term.Slug %}">
+            <div style="text-align: center;" class="card">
+                <div style="color: black;" class="card-body">
+                    {{term.Title}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

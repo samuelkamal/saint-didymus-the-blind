@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col mt-5">
+        <form action="" method="GET">
+            <div class="form-group">
+                <input style="width: 300px;" type="search" name="search_" class="form-control" placeholder="بحث...">
+              </div>
+        </form>
+        <form method="GET" class="mb-3">
+            <button style="background-color: wheat !important; border-color: wheat; color: black;" type="submit" value="" name="cat" class="btn btn-primary">الكل</button>
+            {% for cat in cat %}
+            <button style="background-color: wheat !important; border-color: wheat; color: black;" type="submit" value="{{cat.id}}" name="cat" class="btn btn-primary">{{cat.Title}}</button>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+<div class="row-col-1">
+    {% for ad in adv %}
+    <div class="col-col-1">
+        <h4>{{ad.Adv}}</h4>
+    </div>
+    {% endfor %}
+</div>
+<div class="row">
+{% for book in book %}
+    <div class="col">
+        <a href="{% url 'books' book.Slug book.id %}" class="btn mb-5">
+            <div class="card" style="width: 18rem;">
+                <img style="border-radius: 20px 20px 0 0; height: 250px;" class="card-img-top" src="{{book.Img.url}}" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title" style="text-align: right !important; color: black; text-align: center !important;">{{book.Title}}</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</div>
+
+{% if book.has_other_pages %}
+<div class="row">
+    <div class="col align-self-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {% if book.has_previous %}
+              <li style="margin-left: 1px;" class="page-item">
+                <a style="color: black !important; border-radius: 50%;" class="page-link" href="?page={{ book.previous_page_number }}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              {% endif %}
+
+              {% for i in book.paginator.page_range %}
+              <li style="margin-left: 1px; margin-right: 1px;" class="page-item"><a style="color: black !important; border-radius: 50%;" class="page-link" href="?page={{i}}">{{i}}</a></li>
+              {% endfor %}
+
+              {% if book.has_next %}
+              <li style="margin-right: 1px;" class="page-item">
+                <a style="color: rgb(31, 31, 31) !important; border-radius: 50%;" class="page-link" href="?page={{ book.paginator.num_pages }}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

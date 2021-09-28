@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+<style>
+  .container{
+      height: 607px;
+  }
+</style>
+<div class="row">
+  <div class="col mt-4 mb-3">
+    <div>
+        <h2>
+          تسجيل دخول
+        </h2><hr>
+        <div style="width: 100%;" class="d-flex justify-content-center">
+          <form style="width: 80%;" method="POST">
+              {% csrf_token %}
+              {% bootstrap_form logform %}
+              <button style="background-color: black !important;" type="submit" name="login" class="btn btn-primary mb-3">تسجيل دخول</button>
+              {% if messages %}
+              {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">{{message}}</div>
+              {% endfor %}
+              {% endif %}
+          </form>
+        </div>
+    </div>
+  </div>
+  <div class="mt-4" style="border-left: 1px solid rgb(190, 190, 190); height: 550px;"></div>
+  <div class="col mt-4 mb-3">
+      <div>
+          <h2>
+            مستخدم جديد
+          </h2><hr>
+          <div style="width: 100%;" class="d-flex justify-content-center">
+            <form style="width: 80%;" method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <button style="background-color: black !important;" type="submit" name="signup" class="btn btn-primary">تسجيل</button>
+            </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}

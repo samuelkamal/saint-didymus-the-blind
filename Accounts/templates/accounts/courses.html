@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    .container{
+        height: 607px;
+    }
+</style>
+<div class="row text-center">
+  <div class="col-xl-12 mt-5">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{message.tags}}">{{message}}</div>
+    {% endfor %}
+    {% endif %}
+  </div>
+    <div class="col mt-5">
+      <h1 id="cour">الكورسات</h1>
+    </div>
+  </div>
+  <div class="row">
+    <!--كورس الدبلومة-->
+    <div style="text-align: right;" class="col mt-5 mb-5">
+      <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <a href="{% url 'dip' %}">
+          {% for dip in dip %}
+          <img style="height: 200px; border-radius: 10px;" src="{{dip.Pic.url}}" alt="">
+          <p style="color: black; text-align: center;">{{dip.Description}}</p>
+          {% endfor %}
+        </a>
+      </button>
+    </div>
+    <!--كورس البكالوريوس-->
+    <div style="text-align: right;" class="col mt-5 mb-5">
+      <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <a href="{% url 'bach' %}">
+          {% for bach in bach %}
+          <img style="height: 200px; border-radius: 10px;" src="{{bach.Pic.url}}" alt="">
+          <p style="color: black; text-align: center;">{{bach.Description}}</p>
+          {% endfor %}
+        </a>
+      </button>
+    </div>
+    <!--الكورسات المتخصصة-->
+    <div style="text-align: right;" class="col mt-5 mb-5">
+      <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <a href="{% url 'specour' %}">
+          {% for spe_cour in spe_cour %}
+          <img style="height: 200px; border-radius: 10px;" src="{{spe_cour.Pic.url}}" alt="">
+          <p style="color: black; text-align: center;">{{spe_cour.Description}}</p>
+          {% endfor %}
+        </a>
+      </button>
+    </div>
+    <!--دراسات عليا-->
+    <div style="text-align: right;" class="col mt-5 mb-5">
+      <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <a href="{% url 'pos' %}">
+          {% for post in post %}
+          <img style="height: 200px; border-radius: 10px;" src="{{post.Pic.url}}" alt="">
+          <p style="color: black; text-align: center;">{{post.Description}}</p>
+          {% endfor %}
+        </a>
+      </button>
+    </div>
+</div>
+
+{% endblock %}

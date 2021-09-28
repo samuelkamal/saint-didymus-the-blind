@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .container{
+      height: 607px;
+  }
+</style>
+
+<div class="row">
+    <div class="col mt-3">
+        <p style="font-size: x-large;">لقد تم تسجيل خروجك بنجاح, اضغط <a style="color: blue !important;" href="{% url 'login' %}">هنا</a> لتسجيل الدخول مرة اخرى</p><hr>
+    </div>
+</div>
+
+{% endblock %}

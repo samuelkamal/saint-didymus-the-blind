@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="row">
+    {% for ad in ad %}
+    <div class="col mb-5 mt-3">
+        <h1>{{ad.Ad}}</h1>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row">
+    {% for sub in sub %}
+    <div class="col mb-5">
+        <a href="{% url 'subs' sub.Slug %}">
+            <div class="card" style="width: 18rem;">
+                <img style="border-radius: 20px; height: 200px;" class="card-img-top" src="{{sub.Pic.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <h3 style="text-align: center; color: black;" class="card-title">{{sub.Title}}</h3>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

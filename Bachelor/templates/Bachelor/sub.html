@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    {% for les in less %}
+    <div class="col-xl-12 mb-3">
+        <a href="{% url 'lecs' les.Slug %}">
+            <div class="card w-100">
+                <div class="card-body">
+                  <h5 style="color: black;" class="card-title">{{les.Title}}</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row">
+    {% for sub in sub %}
+    {% if sub.Test %}
+    <div class="col-xl-12 mb-5">
+        <a href="{{sub.Test}}" target="_blank">
+            <div class="card w-100">
+                <div class="card-body">
+                  <h5 style="color: black;" class="card-title">اختبار</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}
