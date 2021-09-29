@@ -28,7 +28,7 @@ class profileform(forms.ModelForm):
     age = forms.IntegerField(label='السن')
     phone = forms.IntegerField(label='رقم الهاتف')
     qualification = forms.CharField(label='المؤهل')
-    job = forms.CharField(label='الوظيفة', help_text='اذا لم تكن هناك وظيفة حاليا اترك الخانة فارغة')
+    job = forms.CharField(label='الوظيفة', help_text='اذا لم تكن هناك وظيفة حاليا اترك الخانة فارغة', required=False)
     system = forms.ChoiceField(label='نظام التعليم', choices=System)
     class Meta:
         model = Profile
