@@ -27,6 +27,7 @@ SECRET_KEY = 'django-insecure-6rq4zpm-52*=d=wivv-u)q8#o(k&k8ucc3p#qu1pjcbc%e3v=^
 DEBUG = True
 
 ALLOWED_HOSTS = ['saintdidymustheblind.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'Postgraduate',
     'News_Advertisement',
     'Accounts',
+    'Graduates',
 ]
 
 MIDDLEWARE = [
