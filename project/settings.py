@@ -27,7 +27,7 @@ SECRET_KEY = 'a68acac1eac321715f6c5c85d898ea75029abc955be51e4f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saintdidymustheblind.herokuapp.com']
+ALLOWED_HOSTS = ['saintdidymustheblind.pythonanywhere.com']
 
 
 # Application definition
