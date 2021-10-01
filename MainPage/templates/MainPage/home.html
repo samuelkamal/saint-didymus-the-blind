@@ -84,12 +84,12 @@
           <h1 id="dar">دار النشر</h1>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-5 text-center">
         <div class="col mb-5 text-md-center">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'dar' %}">
               {% for dar in darELnashr %}
-              <img style="height: 200px; border-radius: 10px;" src="{{dar.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{dar.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{dar.Description}}</p>
               {% endfor %}
             </a>
@@ -104,12 +104,12 @@
           <h1 id="mag">المجلة</h1>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-5 text-center">
         <div class="col mb-5 text-md-center">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'magazin' %}">
               {% for mag in magazin %}
-              <img style="height: 200px; border-radius: 10px;" src="{{mag.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{mag.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{mag.Description}}</p>
               {% endfor %}
             </a>
@@ -124,12 +124,12 @@
           <h1 id="lib">المكتبة</h1>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mt-5 text-center">
         <div class="col mb-5 text-md-center">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'lib' %}">
               {% for lib in library %}
-              <img style="height: 200px; border-radius: 10px;" src="{{lib.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{lib.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{lib.Description}}</p>
               {% endfor %}
             </a>
@@ -144,46 +144,46 @@
           <h1 id="cour">الكورسات</h1>
         </div>
       </div>
-      <div class="row">
+      <div class="row text-center">
         <!--كورس الدبلومة-->
-        <div style="text-align: right;" class="col mt-5">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div style="text-align: right;" class="col mt-5 text-center">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'dip' %}">
               {% for dip in dip %}
-              <img style="height: 200px; border-radius: 10px;" src="{{dip.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{dip.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{dip.Description}}</p>
               {% endfor %}
             </a>
           </button>
         </div>
         <!--كورس البكالوريوس-->
-        <div style="text-align: right;" class="col mt-5">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div style="text-align: right;" class="col mt-5 text-center">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'bach' %}">
               {% for bach in bach %}
-              <img style="height: 200px; border-radius: 10px;" src="{{bach.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{bach.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{bach.Description}}</p>
               {% endfor %}
             </a>
           </button>
         </div>
         <!--الكورسات المتخصصة-->
-        <div style="text-align: right;" class="col mt-5">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div style="text-align: right;" class="col mt-5 text-center">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'specour' %}">
               {% for spe_cour in spe_cour %}
-              <img style="height: 200px; border-radius: 10px;" src="{{spe_cour.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{spe_cour.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{spe_cour.Description}}</p>
               {% endfor %}
             </a>
           </button>
         </div>
         <!--دراسات عليا-->
-        <div style="text-align: right;" class="col mt-5">
-          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+        <div style="text-align: right;" class="col mt-5 text-center mb-5">
+          <button style="background-color: transparent; border: none; border-radius: 10px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); width: 350px">
             <a href="{% url 'pos' %}">
               {% for post in post %}
-              <img style="height: 200px; border-radius: 10px;" src="{{post.Pic.url}}" alt="">
+              <img style="height: 200px; width:100%; border-radius: 10px;" src="{{post.Pic.url}}" alt="">
               <p style="color: black; text-align: center;">{{post.Description}}</p>
               {% endfor %}
             </a>
@@ -199,8 +199,8 @@
           <h1 class="cop">Cun Qew Icxuroc</h1>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col mb-5 text-md-center">
+      <div class="row mt-2">
+        <div class="col mb-3 text-md-center">
           {% for who in whoWeAre %}
             <p style="color: black; text-align: center;">{{who.Description}}</p>
           {% endfor %}
@@ -214,8 +214,8 @@
           <h1>تابعنا</h1>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col mb-5 text-md-center">
+      <div class="row mt-3">
+        <div class="col mb-3 text-md-center">
           {% for follow in followUs %}
             <p style="color: black; text-align: center;">{{follow.Description}}
               <a target="blank_" style="color: blue !important;" href="{{follow.Link}}">{{follow.Title}}</a>
@@ -226,7 +226,7 @@
     </div>
     <footer style="height: 80px; left: 0; bottom: 0; width: 100%; background-color: black; text-align: center;">
         <p style="color: white; padding-top: 10px;">جميع الحقوق محفوظة &copy; | مؤسسة القديس ديديموس الضرير للتعليم الاهوتى و الوعظ<br>
-        This WebSite Made With 	&hearts; By 
+        This WebSite Made With 	&hearts; By
         <a style="text-decoration: none;" target="blank_" href="https://www.facebook.com/samuel.kamal.56">Samuel Kamal</a></p>
     </footer>
     <!-- Optional JavaScript; choose one of the two! -->
